@@ -1,6 +1,6 @@
 # Напишите программу, которая принимает на вход координаты двух точек
 # и находит расстояние между ними в 2D пространстве.
-import math
+from cmath import sqrt
 
 while True:
     try:
@@ -10,12 +10,12 @@ while True:
         print('Please enter the coordinates of point B:')
         bX = float(input('\tx = '))
         bY = float(input('\ty = '))
-        ab = round(math.sqrt((bX - aX) ** 2 + (bY - aY) ** 2), 4)
+        ab = round(sqrt((bX - aX) ** 2 + (bY - aY) ** 2).real, 2)
         result = str(ab).split('.')
         if int(result[1]) != 0:
             print(f'Result:\n'
                   f'\tA ({round(aX)};{round(aY)}); B ({round(bX)};{round(bY)})'
-                  f' -> {result[0]}.{result[1][0:2]}')
+                  f' -> {ab}')
         else:
             print(f'Result:\n'
                   f'\tA ({round(aX)};{round(aY)}); B ({round(bX)};{round(bY)})'
