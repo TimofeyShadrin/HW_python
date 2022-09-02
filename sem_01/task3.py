@@ -7,7 +7,7 @@ while True:
     y = int(input('Please enter the y coordinate: '))
     if x == 0 and y == 0:
         print('Try again')
-    else:
+    else:                        # without match case
         if x > 0 and y > 0:
             print('One')
             break

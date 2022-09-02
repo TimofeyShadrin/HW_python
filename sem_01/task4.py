@@ -1,4 +1,4 @@
-#Напишите программу, которая по заданному номеру четверти,
+# Напишите программу, которая по заданному номеру четверти,
 # показывает диапазон возможных координат точек в этой четверти (x и y).
 
 infinity = '\u221E'
@@ -14,3 +14,6 @@ while True:
                 print(f'-{infinity} < x < 0 and 0 < y < {infinity}')
             case 3:
                 print(f'-{infinity} < x < 0 and -{infinity} < y < 0')
+            case 4:
+                print(f'0 < x < {infinity} and -{infinity} < y < 0')
+        break
