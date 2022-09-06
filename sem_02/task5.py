@@ -1,11 +1,11 @@
 # Реализуйте алгоритм перемешивания списка.
 import random
 
-order = list(range(30, 50))
+order = list(range(30, 40))
 print(f'Initial list: {order}')
 
 
-def check(value=' ', test=[]):
+def check(value=0, test=[]):
     back = False
     for digit in test:
         if value == digit:
