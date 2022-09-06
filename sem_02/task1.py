@@ -1,7 +1,7 @@
 # Напишите программу, которая принимает на вход вещественное число
 # и показывает сумму его цифр.
 
-def sumOfDigits(number: float = 0.0):
+def SumOfDigits(number: float = 0.0):
     temp = str(number).split('.')
     result = 0
     for char in (''.join(temp)):
@@ -11,7 +11,7 @@ def sumOfDigits(number: float = 0.0):
 while True:
     try:
         variable = float(input('Please enter real number: '))
-        sumOfDigits(variable)
+        SumOfDigits(variable)
         break
     except:
         print('Your input is incorrect! Try again.')
