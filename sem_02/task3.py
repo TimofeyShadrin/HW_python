@@ -30,7 +30,8 @@ while True:
         value = int(input('Please enter integer number: '))
         Result(value)
         if back == True:
-            print(f'The sum of all elements of list is: {total}')
+            print(f'Elements of your list are: {work}\n'
+                  f'and the sum of all elements of him is: {total}')
             break
     except:
         print('Your input is incorrect! Try again.')
