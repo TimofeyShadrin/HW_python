@@ -33,6 +33,8 @@ def create_indexes():
 
 product = 1
 indexes = []
+
+
 def result():
     global product
     global indexes
