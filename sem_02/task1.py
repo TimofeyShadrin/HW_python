@@ -3,8 +3,12 @@ def sumOfDigits(number: float = 0.0):
     result = 0
     for char in (''.join(temp)):
         result += int(char)
-    print(result)
+    print(f'The sum of the digits in your real number is {result}.')
 
-try:
-
-sumOfDigits(0.56)
+while True:
+    try:
+        variable = float(input('Please enter real number: '))
+        sumOfDigits(variable)
+        break
+    except:
+        print('Your input is incorrect! Try again.')
