@@ -5,8 +5,6 @@
 # Пример:
 #
 # - [1.1, 1.2, 3.1, 5, 10.01] => 0.19
-from shlex import join
-
 import create_list as cl
 
 numbers = cl.new_list(4, 7, 0.00, 10.00, 2)
