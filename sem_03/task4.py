@@ -9,7 +9,7 @@
 import random
 
 number = random.randint(0, 100)
-print(number)
+print(f'DEC: {number}')
 result = ''
 
 while number != 0:
@@ -17,4 +17,4 @@ while number != 0:
     number //= 2
 
 data = ''.join(reversed(result))
-print(data)
+print(f'BIN: {data}')
