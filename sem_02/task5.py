@@ -1,7 +1,7 @@
 # Реализуйте алгоритм перемешивания списка.
 import random
 
-order = list(range(30, 40))
+order = list(range(30, 42))
 print(f'Initial list: {order}')
 
 
