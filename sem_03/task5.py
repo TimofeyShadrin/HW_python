@@ -7,21 +7,23 @@
 # [-21 ,13, -8, 5, −3, 2, −1, 1, 0, 1, 1, 2, 3, 5, 8, 13, 21]
 
 
-n = int(input('Введите число: '))
+n = int(input('Enter digit: '))
 
 
-def get_fibonacci(n):
-    fibo_nums = []
-    a, b = 1, 1
-    for i in range(n - 1):
-        fibo_nums.append(a)
-        a, b = b, a + b
-    a, b = 0, 1
-    for i in range(n):
-        fibo_nums.insert(0, a)
-        a, b = b, a - b
-    return fibo_nums
+def fib(n: int):
+    if n in [1, 2]:
+        return 1
+    else:
+        return fib(n-1) + fib(n-2)
 
 
-fibo_nums = get_fibonacci(n)
-print(get_fibonacci(n+1))
+result=[]
+for i in range(-n, n+1):
+    if i == 0:
+        result.append(0)
+    elif i > 0:
+        result.append(fib(i))
+    else:
+        result.append(((-1)**(-i+1))*fib(-i))
+
+print(result)
