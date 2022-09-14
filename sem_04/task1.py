@@ -4,3 +4,9 @@
 
 digit = input('Введите число: ')
 accuracy = input('Введите точность: ')
+result = ''
+
+if len(digit) >= len(accuracy):
+    result = digit[0:len(accuracy)]
+
+print(result)
