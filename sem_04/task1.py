@@ -2,11 +2,12 @@
 # Пример:
 # - при d = 0.001, π = 3.141.    10^{-1} ≤ d ≤10^{-10}
 
-digit = input('Введите число: ')
-accuracy = input('Введите точность: ')
+digit = input('Введите число: ').split('.')
+accuracy = input('Введите точность в виде 0.001: ').split('.')
 result = ''
 
-if len(digit) >= len(accuracy):
-    result = digit[0:len(accuracy)]
-
+if len(digit[1]) >= len(accuracy[1]):
+    result = round(float(digit[0] + '.' + digit[1][0:len(accuracy[1]) + 1]), len(accuracy[1]))
+else:
+    pass
 print(result)
