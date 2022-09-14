@@ -18,5 +18,5 @@ for i in range(3, int(math.sqrt(number)) + 1, 2):
 if number > 2:
     result.append(number)
 
-print(f'Список простых множитлей: ', end='')
+print(f'Список простых множителей: ', end='')
 print(*result, sep=', ', end='.')
