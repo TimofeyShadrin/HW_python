@@ -6,7 +6,7 @@ import random
 
 pow = int(input('Задайте натуральную степень: '))
 ratio = [random.randint(0, 5) for _ in range(pow + 1)]
-print(ratio)
+
 result = []
 for i in range(pow):
     if ratio[i] > 1 and pow - i > 1:
@@ -20,4 +20,9 @@ for i in range(pow):
 if ratio[-1] != 0:
     result.append(str(ratio[-1]))
 
-print(*result, sep=' + ', end=' = 0')
+temp = ' + '.join(result) + ' = 0'
+
+with open("polynom.txt", "a", encoding="utf8") as file:
+    file.write(f'Степень: {pow}\n', )
+    file.write(f'Список коэффициентов: {ratio}\n')
+    file.write(f'Многочлен: {temp}\n')
