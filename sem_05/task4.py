@@ -5,10 +5,13 @@ import json
 
 text = ''
 
-def save():
-    with open("text.json", "w", encoding="utf-8") as fh:
-        fh.write(json.dumps(text, ensure_ascii=False))
-    print("Saved!")
+def load():
+    try:
+        global text
+        with open("text.json", "r", encoding="utf-8") as fh:
+            text = json.load(fh)
+        print("File loaded!")
+    except:
+        print('Your file not found!')
 
-
-save()
+load()
