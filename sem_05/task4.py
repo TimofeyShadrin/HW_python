@@ -2,6 +2,7 @@
 # Входные и выходные данные хранятся в отдельных текстовых файлах.
 
 import json
+from random import shuffle
 
 text = ''
 
@@ -32,16 +33,14 @@ def compress():
     print(sorted)
 
     i = 0
-    while i != len(sorted):
+    while i < len(sorted):
 
         quantity = 0
         indexes = []
-        index = 0
 
-        for word in words:
-            if word == sorted[i]:
-                indexes.append(words.index(word, index))
-                index += words.index(word, index) + 1
+        for j, item in enumerate(words, start=0):
+            if item == sorted[i]:
+                indexes.append(j)
                 quantity += 1
 
         dic[sorted[i]] = quantity, indexes
