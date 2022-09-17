@@ -52,6 +52,14 @@ def compress():
 
 load()
 compress()
-print(dic['fuga'])
-test = enumerate(words)
-print(*test)
+
+
+def save():
+    with open("result.json", "w", encoding="utf-8") as fh:
+        for key in dic:
+            fh.write(json.dumps(key, ensure_ascii=False))
+            fh.write(json.dumps(dic[key], ensure_ascii=False))
+    print("Saved!")
+
+
+save()
