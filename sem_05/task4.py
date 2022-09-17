@@ -2,6 +2,7 @@
 # Входные и выходные данные хранятся в отдельных текстовых файлах.
 
 import json
+import os
 import pickle
 from random import shuffle
 
@@ -20,7 +21,7 @@ def load(filename='text.json'):
 
 dic = {}
 words = []
-
+weight1 = os.path.getsize('text.json')
 
 def compress():
     global text
@@ -29,9 +30,7 @@ def compress():
     words = text.strip().split()
     words = list(filter((lambda x: x != ''), words))
 
-    print(words)
     sorted = list(set(words))
-    print(sorted)
 
     i = 0
     while i < len(sorted):
@@ -47,21 +46,23 @@ def compress():
         dic[sorted[i]] = quantity, indexes
         i += 1
 
-    print(dic)
-
 
 load()
 print(text)
 compress()
+print(f'Compress:\n{dic}')
 
 
 def save():
-    with open('result.txt', 'wb') as f:
+    with open('result.json', 'wb') as f:
         pickle.dump(dic, f)
     print("Saved!")
 
 
 save()
+weight2 = os.path.getsize('result.json')
+compression = int(round(float(weight2/weight1), 2) * 100)
+print(f'Compression: {compression}%')
 test = {}
 size = 0
 dec = []
@@ -79,13 +80,9 @@ def decompress():
     dec = [str(n) for n in range(size)]
     for key in test:
         temp = test[key][1]
-        print(temp)
         for i in range(0, test[key][0]):
             dec[temp[i]] = key
 
 
 decompress()
-print(size)
-print(test)
-print(dec)
-
+print(' '.join(dec))
