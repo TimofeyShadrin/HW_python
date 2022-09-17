@@ -4,7 +4,6 @@
 import json
 import os
 import pickle
-from random import shuffle
 
 text = ''
 
