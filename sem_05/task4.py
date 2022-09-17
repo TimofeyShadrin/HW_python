@@ -2,6 +2,7 @@
 # Входные и выходные данные хранятся в отдельных текстовых файлах.
 
 import json
+import pickle
 from random import shuffle
 
 text = ''
@@ -50,15 +51,41 @@ def compress():
 
 
 load()
+print(text)
 compress()
 
 
 def save():
-    with open("result.json", "w", encoding="utf-8") as fh:
-        for key in dic:
-            fh.write(json.dumps(key, ensure_ascii=False))
-            fh.write(json.dumps(dic[key], ensure_ascii=False))
+    with open('result.txt', 'wb') as f:
+        pickle.dump(dic, f)
     print("Saved!")
 
 
 save()
+test = {}
+size = 0
+dec = []
+
+
+def decompress():
+    global test
+    global size
+    global dec
+    with open('result.json', 'rb') as f:
+        test = pickle.load(f)
+        print('File loaded!')
+    for key in test:
+        size += test[key][0]
+    dec = [str(n) for n in range(size)]
+    for key in test:
+        temp = test[key][1]
+        print(temp)
+        for i in range(0, test[key][0]):
+            dec[temp[i]] = key
+
+
+decompress()
+print(size)
+print(test)
+print(dec)
+
