@@ -53,7 +53,7 @@ def step_of_player():
     while True:
         try:
             step = int(input(f'Введите сколько кофент заберете со стола: '))
-            if 0 < step < quantity:
+            if 0 < step <= quantity:
                 break
             else:
                 print('Ваш ввод неверен, проверьте его и поробуйте еще раз!')
@@ -72,11 +72,13 @@ def pc_step():
         step = temp
     else:
         step = quantity + 1 - step
+    print(f'Бот забрал со стола {step} конфет')
+
 
 
 count = 0
 #Определим количество ходов:
-stop = (on_table // (quantity + 1)) + 1
+stop = 0
 
 
 def game():
@@ -87,13 +89,21 @@ def game():
     global who
     global on_table
     global step
+    stop = (on_table // (quantity + 1)) + 1
     while count < stop:
-        if who:
+        if who and count == 0:
+            step_of_player()
+        elif not who and count == 0:
+            pc_step()
+        elif count > 0 and who:
+            pc_step()
             step_of_player()
         else:
+            step_of_player()
             pc_step()
         on_table -= step
         count += 1
 
 
 game()
+print(on_table)
