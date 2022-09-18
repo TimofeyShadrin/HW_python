@@ -32,6 +32,7 @@ def start():
 
 who = True
 
+
 def choice():
     global who
     temp = random.randint(0, 1)
@@ -44,6 +45,8 @@ def choice():
 
 
 step = 0
+
+
 def step_of_player():
     global step
     global quantity
@@ -56,3 +59,41 @@ def step_of_player():
                 print('Ваш ввод неверен, проверьте его и поробуйте еще раз!')
         except:
             print('Ваш ввод неверен, проверьте его и поробуйте еще раз!')
+
+
+def pc_step():
+    global step
+    global on_table
+    global quantity
+    global who
+
+    temp = on_table % (quantity + 1)
+    if count == 0 and not who:
+        step = temp
+    else:
+        step = quantity + 1 - step
+
+
+count = 0
+#Определим количество ходов:
+stop = (on_table // (quantity + 1)) + 1
+
+
+def game():
+    start()
+    global count
+    global stop
+    choice()
+    global who
+    global on_table
+    global step
+    while count < stop:
+        if who:
+            step_of_player()
+        else:
+            pc_step()
+        on_table -= step
+        count += 1
+
+
+game()
