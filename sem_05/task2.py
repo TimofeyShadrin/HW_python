@@ -80,7 +80,7 @@ def pc_step():
     global who
     global count
     temp = on_table % (quantity + 1)
-    if count == 0 and not who and on_table:
+    if count == 0 and not who:
         step = temp
     elif count > 0 and on_table >= quantity:
         step = quantity + 1 - step
