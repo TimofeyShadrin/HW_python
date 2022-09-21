@@ -19,9 +19,10 @@ def count(item, data=None):
             replay += 1
     if replay > 1:
         for el in data:
-            if el == item:
-                data.remove(el)
-                back = True
+            for _ in range(replay):
+                if el == item:
+                    data.remove(el)
+                    back = True
     else:
         back = False
     return data
@@ -31,7 +32,8 @@ result: list
 i = 0
 size = len(numbers)
 while i < size:
-    result = count(numbers[i], numbers)
+    temp = numbers[i]
+    result = count(temp, numbers)
     print(replay)
     if back:
         size -= replay
