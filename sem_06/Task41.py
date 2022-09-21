@@ -30,7 +30,7 @@ def calc(text: str):
             word += char
 
     digits = word.split()
-    print(digits)
+    print(*digits)
     i = 0
 
     while '*' in digits or '/' in digits:
@@ -49,7 +49,7 @@ def calc(text: str):
                 print('На 0 делить нельзя!')
                 break
         i += 1
-    print(digits)
+    print(*digits)
 
     while '+' in digits or '-' in digits:
         if digits[i] == '-':
@@ -82,5 +82,5 @@ def formula(text: str):
 
 
 out = formula(string)
-print('Результат равен = ', end='')
+print('Результат = ', end='')
 print(*out)
