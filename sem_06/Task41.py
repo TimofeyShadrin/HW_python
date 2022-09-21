@@ -10,7 +10,8 @@
 # 1+2*3 => 7;
 # (1+2)*3 => 9;
 
-string = input('Введите формулу для ее вычисления: ')
+string = input('Введите формулу для ее вычисления: ').strip().split()
+string = ''.join(list(filter(lambda x: x != '', string)))
 
 
 def calc(text: str):
@@ -39,27 +40,25 @@ def calc(text: str):
             digits.remove(digits[i - 1])
             i = 0
         elif digits[i] == '/':
-            digits[i] = str(int(int(digits[i - 1]) / int(digits[i + 1])))
-            digits.remove(digits[i + 1])
-            digits.remove(digits[i - 1])
-            i = 0
+            if int(digits[i + 1]) != 0:
+                digits[i] = str(int(int(digits[i - 1]) / int(digits[i + 1])))
+                digits.remove(digits[i + 1])
+                digits.remove(digits[i - 1])
+                i = 0
+            else:
+                print('На 0 делить нельзя!')
+                break
         i += 1
     print(digits)
 
     while '+' in digits or '-' in digits:
         if digits[i] == '-':
-            if int(str(digits[i - 1])) != int(str(digits[i + 1])):
-                digits[i] = str(int(int(digits[i - 1]) - int(digits[i + 1])))
-                digits.remove(digits[i + 1])
-                digits.remove(digits[i - 1])
-                i = 0
-            else:
-                digits[i] = '0'
-                digits.remove(digits[i + 1])
-                digits.remove(digits[i - 1])
-                i = 0
+            digits[i] = str(int(digits[i - 1]) - int(digits[i + 1]))
+            digits.remove(digits[i + 1])
+            digits.remove(digits[i - 1])
+            i = 0
         elif digits[i] == '+':
-            digits[i] = str(int(int(digits[i - 1]) + int(digits[i + 1])))
+            digits[i] = str(int(digits[i - 1]) + int(digits[i + 1]))
             digits.remove(digits[i + 1])
             digits.remove(digits[i - 1])
             i = 0
