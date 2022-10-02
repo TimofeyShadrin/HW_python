@@ -9,6 +9,3 @@ def to_dict(*args):
     for item in args:
         result.setdefault(item, item)
     print(result)
-
-
-to_dict('Яна', 'Иван', 'Мария', 'Маша', 'Петр', 'Илья')

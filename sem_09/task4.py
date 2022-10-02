@@ -12,5 +12,3 @@ def biggest_dict(**kwargs):
     for key, value in kwargs.items():
         my_dict.setdefault(key, value)
     print(my_dict)
-
-biggest_dict(И='Иван', М='Мария', П='Петр', Я='Яна')

@@ -7,7 +7,6 @@
 import random
 
 my_string = ' '.join([str(random.randint(0, 9)) for _ in range(40)])
-print(my_string)
 
 
 def count_it(sequence: str):
@@ -23,5 +22,3 @@ def count_it(sequence: str):
         result_dict.setdefault(temp[0], temp[1])
     print(result_dict)
 
-
-count_it(my_string)
