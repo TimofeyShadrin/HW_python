@@ -17,7 +17,3 @@ class TrafficLight:
         for i in range(time_green):
             time.sleep(1)
             print(f'\r{self.__color[2]} - ', end=f'{time_green - i}s')
-
-
-light = TrafficLight()
-light.running(7, 2, 8)
