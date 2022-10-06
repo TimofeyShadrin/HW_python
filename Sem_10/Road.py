@@ -5,6 +5,6 @@ class Road:
         self._width = width
 
     def calc_mass(self, depth: int):
-        return print(f'\rAsphalt mass is '
-                     f'{self._width * self._length * 25 * depth / 1000} '
-                     f'metric tons')
+        print(f'\rAsphalt mass is '
+              f'{self._width * self._length * 25 * depth / 1000} '
+              f'metric tons')
