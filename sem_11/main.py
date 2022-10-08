@@ -4,10 +4,10 @@ conn = psycopg2.connect(dbname='postgres', user='postgres',
                         password='6773', host='localhost')
 cursor = conn.cursor()
 print(conn.get_dsn_parameters(), "\n")
-cursor.execute('CREATE TABLE Customers(Id SERIAL PRIMARY KEY, '
-               'FirstName CHARACTER VARYING(20), LastName CHARACTER VARYING(20), '
-               'Email CHARACTER VARYING(30) UNIQUE, Phone CHARACTER VARYING(30) '
-               'UNIQUE, Age INTEGER);')
+cursor.execute('INSERT INTO Customers (Id, '
+               'FirstName, LastName, '
+               'Email, Phone, Age) '
+               "VALUES (2, 'Andrei', 'Sokolov', 'sokolov@yandex.ru', '+7113261233', 29);")
 conn.commit()
 cursor.close()
 conn.close()
