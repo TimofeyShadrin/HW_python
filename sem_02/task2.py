@@ -4,11 +4,13 @@ import math
 
 result = []
 
+
 def Factorial(number: int = 1):
     work = []
     for i in range(1, number + 1):
         work.append(math.factorial(i))
     return work
+
 
 def Collection(digit: int = 0):
     global result
@@ -20,6 +22,7 @@ def Collection(digit: int = 0):
     else:
         result = Factorial(digit)
     print(f'A set of products of numbers is: {result}')
+
 
 while True:
     try:

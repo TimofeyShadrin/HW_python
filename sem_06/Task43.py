@@ -41,4 +41,3 @@ while i < size:
         i += 1
     replay = 0
     print(result)
-

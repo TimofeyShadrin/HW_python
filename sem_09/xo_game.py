@@ -1,5 +1,5 @@
-from tkinter import *
 import random
+from tkinter import *
 
 root = Tk()
 root.title('Criss-cross')

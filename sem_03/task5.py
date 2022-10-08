@@ -14,16 +14,16 @@ def fib(n: int):
     if n in [1, 2]:
         return 1
     else:
-        return fib(n-1) + fib(n-2)
+        return fib(n - 1) + fib(n - 2)
 
 
-result=[]
-for i in range(-n, n+1):
+result = []
+for i in range(-n, n + 1):
     if i == 0:
         result.append(0)
     elif i > 0:
         result.append(fib(i))
     else:
-        result.append(((-1)**(-i+1))*fib(-i))
+        result.append(((-1) ** (-i + 1)) * fib(-i))
 
 print(result)

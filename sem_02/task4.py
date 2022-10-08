@@ -4,7 +4,6 @@
 
 import random
 
-
 quantity = random.randint(2, 10)
 work = []
 
@@ -13,6 +12,7 @@ def fill_list():
     global work
     for i in range(quantity):
         work.append(random.randint(-quantity, quantity))
+
 
 unique = []
 size = 0

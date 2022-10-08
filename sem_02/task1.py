@@ -8,6 +8,7 @@ def SumOfDigits(number: float = 0.0):
         result += int(char)
     print(f'The sum of the digits in your real number is {result}.')
 
+
 while True:
     try:
         variable = float(input('Please enter real number: '))

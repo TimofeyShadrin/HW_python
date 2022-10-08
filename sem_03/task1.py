@@ -15,4 +15,3 @@ for i in range(len(numbers)):
         result += numbers[i]
 
 print(result)
-

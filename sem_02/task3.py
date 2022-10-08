@@ -2,13 +2,18 @@
 # выведите на экран их сумму.
 
 work = []
+
+
 def Order(number: int = 1):
     global work
     for i in range(1, number + 1):
         work.append(round(((1 + 1 / i) ** i), 2))
 
+
 back = True
 total = 0
+
+
 def Result(digit: int):
     global total
     global back
@@ -24,6 +29,7 @@ def Result(digit: int):
         Order(digit)
         total = round(sum(work), 2)
         back = True
+
 
 while True:
     try:

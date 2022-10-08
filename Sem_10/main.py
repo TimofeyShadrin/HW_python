@@ -1,5 +1,5 @@
-import TrafficLight as tl
 import Road as r
+import TrafficLight as tl
 
 
 def main():

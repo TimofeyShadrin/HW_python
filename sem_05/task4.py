@@ -22,6 +22,7 @@ dic = {}
 words = []
 weight1 = os.path.getsize('text.json')
 
+
 def compress():
     global text
     global dic
@@ -60,7 +61,7 @@ def save():
 
 save()
 weight2 = os.path.getsize('result.json')
-compression = int(round(float(weight2/weight1), 2) * 100)
+compression = int(round(float(weight2 / weight1), 2) * 100)
 print(f'Compression: {compression}%')
 test = {}
 size = 0

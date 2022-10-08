@@ -4,4 +4,3 @@
 import sympy as sm
 
 x = sm.Symbol('x')
-

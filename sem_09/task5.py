@@ -21,4 +21,3 @@ def count_it(sequence: str):
         temp = result.popitem()
         result_dict.setdefault(temp[0], temp[1])
     print(result_dict)
-
